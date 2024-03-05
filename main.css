@@ -1,0 +1,30 @@
+body {
+    background-color: rgb(241, 200, 200);
+    color: darkred;
+    font-family: Arial;
+    margin: 5px;
+}
+
+header {
+    background-color: darkred; 
+    color: rgb(231, 206, 206); 
+    padding: 10px; 
+    font-size: 16pt;
+}
+
+main {
+    background-color: rgb(241, 200, 200);
+    color: darkred;
+    font-family: Arial;
+    margin: 5px
+}
+
+footer {
+    background-color: darkred; 
+    color: rgb(243, 202, 202); 
+    margin: 5px; 
+    padding: 10px; 
+    font-size: 12pt; 
+    font-style: italic; 
+    text-align: right;
+}
