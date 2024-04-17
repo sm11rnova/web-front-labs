@@ -16,7 +16,7 @@ main {
     background-color: rgb(241, 200, 200);
     color: darkred;
     font-family: Arial;
-    margin: 5px
+    margin: 10px 20px 38px;
 }
 
 footer {
@@ -27,6 +27,10 @@ footer {
     font-size: 12pt; 
     font-style: italic; 
     text-align: right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 a {
@@ -54,4 +58,20 @@ a:hover {
 a:active {
     color: black;
     opacity: 0.3;
+}
+
+div.menu {
+    border: 7px solid #e63535ee;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+div.menu:hover {
+    background-color: white;
+    box-shadow: 0 0 15px darkred;
+}
+
+h1.titlemenu {
+    text-align: center;
 }
