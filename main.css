@@ -28,3 +28,28 @@ footer {
     font-style: italic; 
     text-align: right;
 }
+
+a {
+    color: darkred;
+    text-decoration: none;
+}
+
+a:link {
+    color: darkred;
+    text-decoration: none;
+}
+
+a:visited {
+    color: gray;
+    text-decoration: none;
+}
+
+a:hover {
+    color: lightcoral;
+    text-decoration: underline;    
+}
+
+a:active {
+    color: black;
+    opacity: 0.3;
+}
