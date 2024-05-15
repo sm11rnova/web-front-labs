@@ -33,7 +33,7 @@
         .help-block h2 {
             margin-top: 0;
         }
-        .help-block ul {
+        .help-block ol {
             list-style-type: upper-roman;
             padding-left: 40px;
         }
@@ -45,17 +45,23 @@
     <script>
         let number
         let count = 0;
-        function startGame(){
+        function startGame() {
             number = Math.floor(Math.random() * 100) + 1;
             let screens = document.getElementsByClassName('game');
             screens[0].style.display = 'none';
             screens[1].style.display = 'block';
         }
-        function guess(){
+        function guess() {
             count++;
             let input = document.getElementById('user-number');
             let userNumber = parseInt(input.value);
             let message = document.getElementById('result');
+            if(userNumber > number) {
+                message.innerHTML = 'Вы ввели слишком большое число';
+            }
+            else if (userNumber < number) {
+                message.innerHTML = 'Вы ввели слишком маленькое число';
+            }
             if(userNumber < 1 || userNumber > 100) {
                 message.innerHTML = 'Число должно быть в диапазоне от 1 до 100!';
                 return;
@@ -111,7 +117,7 @@
             <h1>Угадай число</h1>
             <div>
                 Задумано число от 1 до 100. Угадайте,какое?<br>
-                <input type="number" value="" min="0" max="150" id="user-number"><br>
+                <input type="number" value="" min="1" max="150" id="user-number"><br>
                 <button onclick="guess()">Угадать</button>
                 <div id="result"></div>
             </div>
@@ -131,8 +137,8 @@
             
         </div>
 
+        <button id="show-help" onclick="showHelp()">Показать правила игры</button>
         <div class="help-block" id="help-block" style="display: none;">
-            <button id="show-help" onclick="showHelp()">Показать правила игры</button>
             <div>
                 <h2>Правила игры</h2>
                 <ol>
