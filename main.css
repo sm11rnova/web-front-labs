@@ -8,7 +8,7 @@ body {
 header {
     background-color: darkred; 
     color: rgb(231, 206, 206); 
-    padding: 10px; 
+    padding: 15px;
     font-size: 16pt;
 }
 
@@ -16,15 +16,62 @@ main {
     background-color: rgb(241, 200, 200);
     color: darkred;
     font-family: Arial;
-    margin: 5px
+    margin: 10px 20px 38px;
 }
 
 footer {
     background-color: darkred; 
     color: rgb(243, 202, 202); 
-    margin: 5px; 
+    margin: 0px; 
     padding: 10px; 
     font-size: 12pt; 
     font-style: italic; 
     text-align: right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+a {
+    color: darkred;
+    text-decoration: none;
+    transition: 1s 2s;
+}
+
+a:link {
+    color: darkred;
+    text-decoration: none;
+}
+
+a:visited {
+    color: gray;
+    text-decoration: none;
+}
+
+a:hover {
+    color: lightcoral;
+    text-decoration: underline; 
+    transition: 0.3s;   
+}
+
+a:active {
+    color: black;
+    opacity: 0.3;
+}
+
+div.menu {
+    border: 7px solid #e63535ee;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+div.menu:hover {
+    background-color: white;
+    box-shadow: 0 0 15px darkred;
+}
+
+h1.titlemenu {
+    text-align: center;
 }

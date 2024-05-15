@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смирнова Виктория Александровна. Корзина товаров</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-48x48.ico">
+    <style>
+        .basket {
+            margin-top: 15px;
+            background-color: antiquewhite;
+            border: 5px solid;
+            border-color: darkred;
+            border-radius: 5px;
+            width: 450px;
+            text-align: center;
+            color: rgb(36, 13, 2);
+            font-size: 15px;
+            position: absolute;
+            left: 40%;
+        }
+        .product {
+            margin: 7px;
+            padding: 9px;
+            border-radius: 15px;
+            color: black;
+        }
+        .button {
+            margin: 5px;
+            display: inline-block;
+        }
+        #price {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+            margin: auto;
+        }
+        input {
+            font-size: 14px;
+        }
+    </style>
+<script>
+    const products = [
+        { id: 'productA', name: 'Молоко', price: 70 },
+        { id: 'productB', name: 'Хлеб', price: 50 },
+        { id: 'productC', name: 'Вода 1л', price: 40 },
+        { id: 'productD', name: 'Пакет мал.', price: 5 },
+        { id: 'productE', name: 'Рис', price: 100 },
+        { id: 'productF', name: 'Гречка', price: 100 },
+        { id: 'productG', name: 'Сок апельсиновый', price: 120 }
+    ];
+    function createProductElement(product) {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+
+        const label = document.createElement('label');
+        const productName = document.createTextNode(`${product.name} (${product.price}р./шт) `);
+        const input = document.createElement('input');
+        input.type = 'number';
+        input.min = 0;
+        input.placeholder = 'Введите количество';
+        input.id = product.id;
+
+        label.appendChild(productName); 
+        label.appendChild(input);
+
+        productDiv.appendChild(label);
+        return productDiv;
+    }
+    function addProductsToCart() {
+        const cartDiv = document.getElementById('cart');
+        products.forEach(product => { 
+            const productElement = createProductElement(product);
+            cartDiv.appendChild(productElement);
+        });
+    }
+    function showSum() {
+        let totalPrice = 0;
+        let errorMessage = '';
+        let atLeastOneProduct = false;
+
+        products.forEach(product => {
+            const count = parseInt(document.getElementById(product.id).value, 10);
+            if (count < 0) {
+                errorMessage = 'Количество товара не может быть отрицательным.';
+                return;
+            }
+            if (count > 0) {
+                atLeastOneProduct = true;
+                totalPrice += count * product.price;
+            }
+        });
+        if (!atLeastOneProduct) {
+            errorMessage = 'Нужно выбрать хотя бы один товар.';
+        }
+        const balance = parseFloat(document.getElementById('balance').value);
+        if (totalPrice > balance) {
+            errorMessage = 'У вас недостаточно средств!';
+        }
+        document.getElementById('price').innerHTML = errorMessage ? errorMessage : `Итого: ${totalPrice}₽`;
+    }
+    function showClean() {
+        products.forEach(product => {
+            document.getElementById(product.id).value = '';
+        });
+        document.getElementById('price').innerHTML = '';
+    }
+    function checkout() {
+        const balance = parseFloat(document.getElementById('balance').value);
+        let totalPrice = 0;
+        let errorMessage = '';
+        let atLeastOneProduct = false;
+
+        products.forEach(product => {
+            const count = parseInt(document.getElementById(product.id).value, 10);
+            if (count < 0) {
+                errorMessage = 'Количество товара не может быть отрицательным.';
+                return false;
+            }
+            if (count > 0) {
+                atLeastOneProduct = true;
+                totalPrice += count * product.price;
+            }
+        });
+        if (!atLeastOneProduct) {
+            errorMessage = 'Нужно выбрать хотя бы один товар.';
+        } else if (totalPrice > balance) {
+            errorMessage = 'У вас недостаточно средств!';
+        } else {
+            errorMessage = 'Оформление успешно.';
+        }
+        document.getElementById('balance-error').textContent = errorMessage;
+        document.getElementById('total-price').textContent = totalPrice > 0 ? `Итого: ${totalPrice}₽` : '';
+    }
+    window.onload = addProductsToCart;
+</script>
+
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+    
+    <main>
+        <div class="basket">
+            <h1>Корзина товаров</h1>
+            <label for="balance">Мой баланс:</label>
+            <input type="number" id="balance" value="1000" min="0" step="0.01" required>
+            <div id="balance-error"></div>
+
+            <div id="cart">
+
+            </div>
+
+            <div class="button">
+                <input type="button" value="ОК" onclick="showSum()">
+            </div>
+            <div id="price"></div>
+            <div class="button">
+                <input type="button"value="Очистить" onclick="showClean()">
+            </div>
+        </div>
+        <div id="total-price"></div>
+
+    </main>
+
+    <footer>
+        &copy; Виктория Смирнова, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>

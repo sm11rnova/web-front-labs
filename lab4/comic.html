@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смирнова Виктория Александровна. Комикс</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-48x48.ico">
+    <style>
+        .all {
+            position: relative;
+        }
+        .cloud {
+            line-height: 90px;
+            text-align: center;
+            background-color: white;
+            border: 3px solid darkred;
+            margin: 15px;
+            border-radius: 50%;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        .first {
+            position: relative;
+            width: 30px;
+            height: 20px;
+            left: 650px;
+            top: -470px;
+            transition-delay: 0s;
+        }
+        .second {
+            position: relative;
+            width: 50px;
+            height: 30px;
+            left: 670px;
+            top: -540px;
+            transition-delay: 0.5s;
+        }
+        .third {
+            position: relative;
+            width: 65px;
+            height: 40px;
+            left: 700px;
+            top: -630px;
+            transition-delay: 1s;
+        }
+        .text {
+            position: relative;
+            width: 150px;
+            height: 90px;
+            left: 720px;
+            top: -780px;
+            transition-delay: 1.5s;
+        }
+        .all:hover .cloud{
+            opacity: 1;            
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+    
+    <main>
+        <div class="all">
+            <img src="images/gtasakrs.png" height="50%">
+            <div class=" cloud first"></div>
+            <div class="cloud second"></div>
+            <div class="cloud third"></div>
+            <div class="cloud text"> Here we go again</div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Виктория Смирнова, ФБИ-21, 2 курс, 2024
+    </footer>
+
+</body>
+</html>

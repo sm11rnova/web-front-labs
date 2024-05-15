@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смирнова Виктория Александровна. Цитата Эйнштейна</title>
+    <link rel="stylesheet" href="../main.css">
+    <style>
+        .citation {
+            border: 1px solid darkred;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px rgb(75, 32, 32);
+            background: linear-gradient(to right top, red, orange, yellow, lime, aqua,
+            blue, purple);
+        }
+
+        .text {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .author {
+            text-align: left;
+            font-size: 30px;
+            opacity: 0.8;
+            margin-top: 30px;
+            margin-left: 50%;
+        }
+
+        .citation1 {
+            border: 10px solid darkred;
+            padding: 5px;
+            border-radius: 15px;
+            margin: 5px;
+            box-shadow: 10px 10px 5px rgb(75, 32, 32);
+            background: linear-gradient(to right, white, lightcoral);
+        }
+
+        .text1 {
+            font-size: 30px;
+            font-family: consolas;
+            text-align: center;
+        }
+
+        .author1 {
+            text-align: center;
+            font-size: 20px;
+            opacity: 0.8;
+            margin-top: 30px;
+        }
+        .citation2 {
+            border: 4px solid darkred;
+            padding: 30px;
+            border-radius: 5px;
+            margin: 40px;
+            box-shadow: 10px 10px 5px rgb(75, 32, 32);
+            background: linear-gradient(to left, white, lightcoral);
+        }
+
+        .text2 {
+            font-size: 50px;
+            font-weight: bold;
+            text-align: right;
+            font-family: gabriola;
+        }
+
+        .author2 {
+            text-align: right;
+            font-size: 25px;
+            opacity: 0.8;
+            margin-top: 30px;
+            font-style: italic;
+        }
+        .citation3 {
+            border: 3px solid darkred;
+            padding: 5px;
+            border-radius: 15px;
+            margin: 40px;
+            box-shadow: 10px 10px 5px rgb(75, 32, 32);
+            background: linear-gradient(to left top, lightcoral, white, lightcoral);
+        }
+
+        .text3 {
+            font-size: 45px;
+            text-align: left;
+            font-family: lusida console;
+        }
+
+        .author3 {
+            text-align: center;
+            font-size: 25px;
+            opacity: 0.8;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .citation4 {
+            border: 20px solid darkred;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 5px;
+            box-shadow: 10px 10px 5px rgb(75, 32, 32);
+            background: linear-gradient(to right top, lightcoral, white, lightcoral);
+        }
+
+        .text4 {
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .author4 {
+            text-align: center;
+            font-size: 15px;
+            opacity: 1;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .citation5 {
+            border: 4px solid darkred;
+            padding: 30px;
+            border-radius: 6px;
+            margin: 50px;
+            box-shadow: 10px 10px 5px rgb(75, 32, 32);
+            background: linear-gradient(to right top, white, lightcoral, white);
+        }
+
+        .text5 {
+            font-size: 45px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .author5 {
+            text-align: left;
+            font-size: 30px;
+            opacity: 0.8;
+            margin-top: 30px;
+        }
+        .citation6 {
+            border: 15px solid darkred;
+            padding: 5px;
+            border-radius: 5px;
+            margin: 5px;
+            box-shadow: 10px 10px 5px rgb(75, 32, 32);
+            background: linear-gradient(to left top, white, lightcoral, white);
+        }
+
+        .text6 {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .author6 {
+            text-align: left;
+            font-size: 30px;
+            opacity: 0.8;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .citation7 {
+            border: 50px solid darkred;
+            padding: 20px;
+            border-radius: 20px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px rgb(75, 32, 32);
+            background: linear-gradient(to right top, tomato, white);
+        }
+
+        .text7 {
+            font-size: 60px;
+            font-weight: bold;
+            text-align: right;
+            font-family: segoe print;
+        }
+
+        .author7 {
+            text-align: left;
+            font-size: 30px;
+            opacity: 0.8;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        .citation8 {
+            border: 12px solid darkred;
+            padding: 40px;
+            border-radius: 5px;
+            margin: 5px;
+            box-shadow: 10px 10px 5px rgb(75, 32, 32);
+            background: linear-gradient(to left top, tomato, white);
+        }
+
+        .text8 {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .author8 {
+            text-align: left;
+            font-size: 15px;
+            opacity: 0.8;
+            margin-top: 10px;
+            margin-bottom: 15;
+        }
+        .citation9 {
+            border: 5px solid darkred;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px rgb(75, 32, 32);
+            background: linear-gradient(to right, tomato, white, tomato, white);
+        }
+
+        .text9 {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .author9 {
+            text-align: center;
+            font-size: 20px;
+            opacity: 0.8;
+            margin-top: 30px;
+        }
+        .citation10 {
+            border: 15px solid darkred;
+            padding: 7px;
+            border-radius: 10px;
+            margin: 7px;
+            box-shadow: 10px 10px 5px rgb(75, 32, 32);
+            background: linear-gradient(to right top, white, tomato, white, tomato);
+        }
+
+        .text10 {
+            font-size: 35px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .author10 {
+            text-align: left;
+            font-size: 20px;
+            opacity: 0.8;
+            margin-top: 10px;
+            margin-bottom: 10;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 3
+    </header>
+
+    <main>
+        <div class="citation">
+            <div class="text">
+                Стремись не к успеху, а к ценностям, которые он даёт.
+            </div>
+            <div class="author">
+                Альберт Эйнштейн 
+            </div>
+        </div>
+
+        <div class="citation1">
+            <div class="text1">
+                Никогда не ошибается тот, кто ничего не делает.
+            </div>
+            <div class="author1">
+                Теодор Рузвельт 
+            </div>
+        </div>
+
+        <div class="citation2">
+            <div class="text2">
+                Менее всего просты люди, желающие казаться простыми.
+            </div>
+            <div class="author2">
+                Лев Николаевич Толстой 
+            </div>
+        </div>
+        <div class="citation3">
+            <div class="text3">
+                Мы находимся здесь, чтобы внести свой вклад в этот мир. Иначе зачем мы здесь?
+            </div>
+            <div class="author3">
+                Стив Джобс 
+            </div>
+        </div>
+        <div class="citation4">
+            <div class="text4">
+                Мода проходит, стиль остаётся.
+            </div>
+            <div class="author4">
+                Коко Шанель 
+            </div>
+        </div>
+        <div class="citation5">
+            <div class="text5">
+                Если человек не нашёл, за что может умереть, он не способен жить.
+            </div>
+            <div class="author5">
+                Мартин Лютер Кинг 
+            </div>
+        </div>
+        <div class="citation6">
+            <div class="text6">
+                Лучше быть хорошим человеком, "ругающимся матом", чем тихой, воспитанной тварью.
+            </div>
+            <div class="author6">
+                Фаина Раневская 
+            </div>
+        </div>
+        <div class="citation7">
+            <div class="text7">
+                Мой способ шутить – это говорить правду. На свете нет ничего смешнее.
+            </div>
+            <div class="author7">
+                Бернард Шоу 
+            </div>
+        </div>
+        <div class="citation8">
+            <div class="text8">
+                Дай человеку власть, и ты узнаешь, кто он.
+            </div>
+            <div class="author8">
+                Наполеон Бонапарт 
+            </div>
+        </div>
+        <div class="citation9">
+            <div class="text9">
+                Перспектива рано умереть заставила меня понять, что жизнь стоит того, чтобы её прожить.
+            </div>
+            <div class="author9">
+                Стивен Хокинг 
+            </div>
+        </div>
+        <div class="citation10">
+            <div class="text10">
+                Любите искусство в себе, а не себя в искусстве.
+            </div>
+            <div class="author10">
+                Константин Станиславский 
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        &copy; Виктория Смирнова, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смирнова Виктория Александровна. Скрытие кругов</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-48x48.ico">
+    <script> 
+        function Remove(circle) { 
+            circle.style.opacity = '0'; 
+        } 
+        function Return() { 
+            document.querySelectorAll('.circle').forEach(function(circle) { 
+                circle.style.opacity = '1'; 
+        }); 
+        } 
+    </script> 
+    <style> 
+        .circle{ 
+            color: rgb(255, 255, 255);
+            border-radius: 100%; 
+            border: solid 2px; 
+            width: 55px; 
+            height: 55px; 
+            display: inline-block; 
+            text-align: center;
+            font-size: 35pt; 
+            position: absolute; 
+            cursor: pointer; 
+            transition: 0.5s; 
+            left: calc(10% + 80% * var(--rand-x));
+            top: calc(10% + 80% * var(--rand-y));
+        }
+        </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+    
+    <main>
+        <div class="circle 1" id="output1" style="background-color: black; --rand-x:0.8; --rand-y:0.3;" onclick="Remove(this)">1</div> 
+        <div class="circle 2" id="output2" style="background-color: darkred; --rand-x:0.7; --rand-y:0.1;" onclick="Remove(this)">2</div> 
+        <div class="circle 3" id="output3" style="background-color: pink; --rand-x:0.3; --rand-y:0.7;" onclick="Remove(this)">3</div> 
+        <div class="circle 4" id="output4" style="background-color: darkcyan; --rand-x:0.4; --rand-y:0.9;" onclick="Remove(this)">4</div> 
+        <div class="circle 5" id="output5" style="background-color: darkgreen; --rand-x:0.1; --rand-y:0.4;" onclick="Remove(this)">5</div> 
+        <div class="circle 6" id="output6" style="background-color: darkslateblue; --rand-x:0.9; --rand-y:0.2;" onclick="Remove(this)">6</div> 
+        <div class="circle 7" id="output7" style="background-color: darkorange; --rand-x:0.8; --rand-y:0.5;" onclick="Remove(this)">7</div> 
+        <div class="circle 8" id="output8" style="background-color: darkblue; --rand-x:0.2; --rand-y:0.3;" onclick="Remove(this)">8</div> 
+        <div class="circle 9" id="output9" style="background-color: darksalmon; --rand-x:0.5; --rand-y:0.6;" onclick="Remove(this)">9</div> 
+        <div class="circle 10" id="output10" style="background-color: darkgoldenrod; --rand-x:0.7; --rand-y:0.3;" onclick="Remove(this)">10</div> 
+        <input type="button" value="Вернуть" onclick="Return()"> 
+    </main>
+
+    <footer>
+        &copy; Виктория Смирнова, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
