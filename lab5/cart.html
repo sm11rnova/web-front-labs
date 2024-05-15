@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смирнова Виктория Александровна. Корзина товаров</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-48x48.ico">
+    <script>
+        function showSum() {
+            let inputA = document.getElementById("productA");
+            let inputB = document.getElementById("productB");
+            let inputC = document.getElementById("productC");
+            let inputD = document.getElementById("productD");
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let c = parseInt(inputC.value);
+            let d = parseInt(inputD.value);
+            a= isNaN(a) ? 0: a;
+            b= isNaN(b) ? 0: b;
+            c= isNaN(c) ? 0: c;
+            d= isNaN(d) ? 0: d;
+            let result = a * 100 + b * 80 + c * 150 + d * 300;
+            let price = document.getElementById("price");
+            price.innerHTML = "Итого: " + result + "₽";
+        }
+        function showClean() {
+            productA.value = "";
+            productB.value = "";
+            productC.value = "";
+            productD.value = "";
+            productE.value = "";
+            price.innerHTML = "";
+        }
+    </script>
+    <style>
+        .basket {
+                margin-top: 15px;
+                background-color: antiquewhite;
+                border: 5px solid;
+                border-color: darkred;
+                border-radius: 5px;
+                width: 450px;
+                text-align: center;
+                color: rgb(36, 13, 2);
+                font-size: 15px;
+                position: absolute;
+                left: 40%;
+        }
+        .product {
+                margin: 7px;
+                padding: 9px;
+                border-radius: 15px;
+                color: black;
+        }
+        .button {
+                margin: 5px;
+                display: inline-block;
+        }
+        #price {
+                border: 1px solid;
+                width: 300px;
+                height: 40px;
+                margin: auto;
+        }
+        input {
+                font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+    
+    <main>
+        <div class="basket">
+            <h1>Корзина товаров</h1>
+
+            <div class="product">
+                <label>
+                    Яблоки(100р/шт) <input type="number" min="0" placeholder="Введите количество" id="productA">
+                </label><br>
+            </div>
+
+            <div class="product">
+                <label>
+                   Груши(80р/шт) <input type="number" min="0" placeholder="Введите количество" id="productB">
+                </label><br>
+            </div>
+            
+            <div class="product">  
+                <label>
+                    Апельсины(150р/шт) <input type="number" min="0" placeholder="Введите количество" id="productC">
+                </label><br>
+            </div>
+            
+            <div class="product">
+                <label>
+                    Дыни(300р/шт) <input type="number" min="0" placeholder="Введите количество" id="productD">
+                </label>
+            </div>
+
+            <div class="button">
+                <input type="button" value="Рассчитать сумму" onclick="showSum()">
+            </div>
+
+            <div id="price"></div>
+
+            <div class="button">
+                <input type="button" value="Очистить" onclick="showClean()">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Виктория Смирнова, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
