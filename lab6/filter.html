@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смирнова Виктория Александровна. Фильтр товаров</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-48x48.ico">
+    <style>
+        img{
+            width: 40%;
+            height: 40%;
+        }
+    </style>
+    <script>
+        function filter() {
+            let color = document.getElementById('wear-color').value;
+            let type = document.getElementById('wear-type').value;
+            let wear = document.getElementById('wear');
+
+            if(color == 'Белый' && type == 'Футболка') {
+                wear.src = 'whiteT.jpg';
+            }
+            else if (color === 'Красный' && type === 'Футболка') {
+                wear.src = 'redT.jpg';
+            } 
+            else if (color === 'Чёрный' && type === 'Футболка') {
+                wear.src = 'blackT.jpg';
+            } 
+            else if (color === 'Белый' && type === 'Поло') {
+                wear.src = 'whiteP.jpg';
+            } 
+            else if (color === 'Красный' && type === 'Поло') {
+                wear.src = 'redP.jpg';
+            } 
+            else if (color === 'Чёрный' && type === 'Поло') {
+                wear.src = 'blackP.jpg'; 
+            } 
+            else if (color === 'Белый' && type === 'Майка') {
+                wear.src = 'whiteM.jpg';
+            } 
+            else if (color === 'Красный' && type === 'Майка') {
+                wear.src = 'redM.jpg'; 
+            } 
+            else if (color === 'Чёрный' && type === 'Майка') {
+                wear.src = 'blackM.jpg';
+            }
+        }
+        function resetFilter() {
+            document.getElementById('wear-color').value = '';
+            document.getElementById('wear-type').value = '';
+            document.getElementById('wear').src = '';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+    
+    <main>
+        <div class="wear">
+            Цвет одежды:
+            <select id="wear-color">
+                <option>Белый</option>
+                <option>Красный</option>
+                <option>Чёрный</option>
+            </select><br>
+            Вид одежды:
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Поло</option>
+                <option>Майка</option>
+            </select><br>
+    
+            <button onclick="filter()">OK</button>
+            <button onclick="resetFilter()">Вернуться</button>
+    
+            <img id="wear">
+        </div>    
+    </main>
+
+    <footer>
+        &copy; Виктория Смирнова, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
