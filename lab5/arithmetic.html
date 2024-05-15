@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смирнова Виктория Александровна. Вывод суммы</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-48x48.ico">
+    <script>
+        function showSum() {
+            let a = 5154;
+            let b = 7891;
+            let result = a + b;
+            alert ('Сумма ' + a + ' и ' + b + ' равна ' + result);
+        }
+        function showAuthor() {
+            let author = 'Автор страницы: \nСмирнова Виктория Александровна';
+            alert(author);
+        }
+        function showHello(){
+            alert('Приветствую вас на моей странице! \nВсе, что ни делается-к лучшему') 
+        }
+
+    </script>
+    <style>
+        .message {
+            width: 200px;
+            border: 3px solid brown;
+            margin-bottom: 20px;
+            padding: 10px;
+            box-shadow: 0 0 15px darkred;
+            background-color: aliceblue;
+            transition: 1s;
+            color: darkred;
+            display: inline-block;
+            vertical-align: top;
+            cursor: pointer;
+        }
+        .message:hover {
+            transform: scale(1.05);
+            flex-wrap: wrap;
+        }
+
+        header {
+            cursor: pointer;
+        }
+        footer {
+            cursor: pointer;
+        }
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+    
+    <main>
+        <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
+        <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+    </main>
+
+    <footer ondblclick="showHello()">
+        &copy; Виктория Смирнова, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
