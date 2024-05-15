@@ -22,6 +22,25 @@
             margin-top: 10px; 
             text-align: center;       
         }
+        .help-block {
+        margin-top: 20px;
+        background-color: whitesmoke;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: left;
+        }
+        .help-block h2 {
+            margin-top: 0;
+        }
+        .help-block ul {
+            list-style-type: upper-roman;
+            padding-left: 40px;
+        }
+        .help-block button {
+            margin-top: 15px;
+            text-align: center;
+        }
     </style>
     <script>
         let number
@@ -59,6 +78,21 @@
             screens[1].style.display = 'block';
             startGame();
         }
+        function showHelp() {
+            let helpBlock = document.getElementById('help-block');
+            let showHelpButton = document.getElementById('show-help');
+
+            helpBlock.style.display = 'block';
+            showHelpButton.style.display = 'none';
+        }
+
+        function hideHelp() {
+            let helpBlock = document.getElementById('help-block');
+            let showHelpButton = document.getElementById('show-help');
+
+            helpBlock.style.display = 'none';
+            showHelpButton.style.display = 'block';
+        }
     </script>
 </head>
 <body>
@@ -72,32 +106,46 @@
             <button onclick="startGame()">
                 Сыграть в игру
             </button>
-        </div>
 
         <div class="game" style="display: none;">
-            <h1>Угадай число!</h1>
+            <h1>Угадай число</h1>
             <div>
-                Задумано число от 1 до 100. Угадайте, какое?<br>
-                <input type="number" value="" min="1" max="100" id="user-number"><br>
-                <button>Угадать</button>
+                Задумано число от 1 до 100. Угадайте,какое?<br>
+                <input type="number" value="" min="0" max="150" id="user-number"><br>
+                <button onclick="guess()">Угадать</button>
                 <div id="result"></div>
             </div>
         </div>
 
         <div class="game" style="display: none;">
-            <h1>Поздравляем,вы выиграли!</h1>
-
+            <h1>Поздравляем, вы выиграли!</h1>
             <div>
                 Задуманное число: <span id="number"></span>
             </div>
             <div>
                 Количество попыток: <span id="try-count"></span>
-            </div>   
-            <div>
-                <button onclick="again()">Сыграть ещё раз</button>
             </div>
-
+            <div>
+                <button onclick="playAgain()">Сыграть еще раз</button>
+            </div>
+            
         </div>
+
+        <div class="help-block" id="help-block" style="display: none;">
+            <button id="show-help" onclick="showHelp()">Показать правила игры</button>
+            <div>
+                <h2>Правила игры</h2>
+                <ol>
+                    <li>Нажмите на кнопку "Сыграть в игру"</li>
+                    <li>Введите число в диапазоне от 1 до 100</li>
+                    <li>Нажмите кнопку "Угадать"</li>
+                    <li>Сосредоточьтесь и довертесь себе</li>
+                    <li>Надеюсь, удача была на вашей стороне!</li>
+                </ol>
+                <button onclick="hideHelp()">Скрыть правила игры</button>
+            </div>
+        </div>
+
     </main>
 
     <footer>
