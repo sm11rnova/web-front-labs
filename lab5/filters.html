@@ -28,6 +28,11 @@
             document.getElementById('grayscaleOutput').innerText = value;
             document.getElementById('blurImage').style.filter = 'grayscale(' + value + ')';
         }
+        function huerotateChange () {
+            let value = document.getElementById('hue-rotateValue').value + 'deg';
+            document.getElementById('hue-rotateOutput').innerText = value;
+            document.getElementById('blurImage').style.filter = 'hue-rotate(' + value + ')';
+        }
     </script>
 </head>
 <body>
@@ -58,6 +63,12 @@
             Фильтр grayscale:
             <input type="range" min="0" max="500" value="0" onchange="grayscaleChange()" id="grayscaleValue">
             <span id="grayscaleOutput"></span>
+        </div>
+
+        <div>
+            Фильтр hue-rotate:
+            <input type="range" min="0" max="360" value="0" onchange="huerotateChange()" id="hue-rotateValue">
+            <span id="hue-rotateOutput"></span>
         </div>
 
         <div><img src="vkusno.webp" id="blurImage" width="60%"></div>
