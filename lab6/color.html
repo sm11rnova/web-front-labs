@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смирнова Виктория Александровна. Перебор цветов</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-48x48.ico">
+    <style>
+        .color-block {
+            width: 200px;
+            height: 100px;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top :150px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.7s, color 0.5s;
+            background-color: salmon;
+            color: black;
+            border: 3px solid;
+            border-color: darkred;
+            transition: 0.5s;
+            padding: 40px;
+        }
+        .color-block:hover{
+            transform: scale(1.1);
+        }
+    </style>
+    <script>
+     function changeColor(div) {
+            if (div.style.backgroundColor == 'salmon') {
+                div.style.backgroundColor = 'darkred';
+                document.getElementById('color-name').innerHTML = 'тёмно-красный';
+                div.style.color = 'white';
+            } 
+            else if (div.style.backgroundColor == 'darkred') {
+                div.style.backgroundColor ='black';
+                document.getElementById('color-name').innerHTML = 'чёрный';
+            } 
+            else if (div.style.backgroundColor == 'black') {
+                div.style.backgroundColor = 'purple';
+                document.getElementById('color-name').innerHTML = 'фиолетовый';
+            } 
+            else if (div.style.backgroundColor == 'purple') {
+                div.style.backgroundColor = 'brown';
+                document.getElementById('color-name').innerHTML = 'коричневый';
+            } 
+            else {
+                div.style.backgroundColor = 'salmon';
+                div.style.color = 'black';
+                document.getElementById('color-name').innerHTML = 'форелевый';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+    
+    <main>
+        <div class="color-block" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">форелевый</span><br>
+            Щёлкните два раза, чтобы сменить цвет.
+        </div>
+
+    </main>
+
+    <footer>
+        &copy; Виктория Смирнова, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
