@@ -99,6 +99,41 @@
                 }
         }
 
+        function createZvetKrugi() {
+            let numberOfCircles = parseInt(document.getElementById('circleCountInput').value, 10);
+
+            if (isNaN(numberOfCircles) || numberOfCircles <= 0) {
+                alert('Введите корректное количество кругов.');
+                return;
+            }
+
+            let main = document.querySelector('main');
+
+            main.innerHTML = '';
+
+            for (let i = numberOfCircles; i >= 1; i--) {
+                let circle = document.createElement('div');
+                circle.style.width = '60px';
+                circle.style.height = '60px';
+                circle.style.borderRadius = '50%';
+                circle.style.border = '2px solid darkred';
+                circle.style.display = 'inline-block';
+                circle.style.margin = '8px';
+                circle.style.textAlign = 'center';
+                circle.style.lineHeight = '60px';
+
+                if (i % 2 === 0) {
+                    circle.style.backgroundColor = 'white';
+                } 
+                else {
+                    circle.style.backgroundColor = 'pink';
+                }
+
+                circle.innerHTML = `${i}`;
+
+                main.appendChild(circle);
+            }
+        }
     </script>
 </head>
 <body>
@@ -112,6 +147,7 @@
         <button onclick="add20_50()">20 => 50</button>
         <button onclick="add10_min80()">10 => -80</button>
         <button onclick="addProzBlocks()">Добавить полупрозрачные блоки</button>
+        <button onclick="createZvetKrugi()">Создать цветные круги</button>
     </main>
 
     <footer>
