@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смирнова Виктория Александровна. Котировки акций компании «Полиметалл»</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-48x48.ico">
+    <script>
+        function showStockInfo() {
+            const dates = [
+                '14.05.2024', '15.05.2024', '16.05.2024', '17.05.2024', '20.05.2024',
+                '21.05.2024', '22.05.2024', '23.05.2024','24.05.2024','27.05.2024'
+            ];
+            const prices = [
+                315.4, 317.7, 315.9, 314.5, 307.3, 300.6, 301.3, 
+                292.2, 282.3, 265.5
+            ];
+
+            let tbody = document.getElementById('stock-table').querySelector('tbody');
+            tbody.innerHTML = '';
+
+            let sum = 0;
+            let minPrice = prices[0];
+            let maxPrice = prices[0];
+
+            for (let i = 0; i < prices.length; i++) {
+                let tr = document.createElement('tr');
+
+                let tdDate = document.createElement('td');
+                tdDate.innerText = dates[i];
+                tr.appendChild(tdDate);
+
+                let tdPrice = document.createElement('td');
+                tdPrice.innerText = prices[i];
+                tr.appendChild(tdPrice);
+
+                let tdDifference = document.createElement('td');
+                if (i === 0) {
+                    tdDifference.innerText = '-';
+                } else {
+                    let difference = prices[i] - prices[i - 1];
+                    tdDifference.innerText = difference.toFixed(2);
+                }
+                tr.appendChild(tdDifference);
+
+                tbody.appendChild(tr);
+
+                sum += prices[i];
+                minPrice = Math.min(minPrice, prices[i]);
+                maxPrice = Math.max(maxPrice, prices[i]);
+            }
+
+            let averagePrice = sum / prices.length;
+
+            let stockDetails = document.getElementById('stock-details');
+            stockDetails.innerHTML = `
+                Средняя стоимость акции: ${averagePrice.toFixed(2)}<br>
+                Максимальная стоимость акции: ${maxPrice.toFixed(2)}<br>
+                Минимальная стоимость акции: ${minPrice.toFixed(2)}
+            `;
+
+            let button = document.querySelector('button');
+            if (button) {
+                button.remove();
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    
+    <main>
+        <button onclick="showStockInfo()">Курс акций компании "Полиметалл"</button>
+            <table border="1" id="stock-table">
+                <tbody></tbody>
+            </table>
+            <div id="stock-details"></div> 
+    </main>
+
+    <footer>
+        &copy; Виктория Смирнова, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
