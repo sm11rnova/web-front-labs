@@ -73,6 +73,32 @@
                     main.appendChild(newCircle);
                 }
         }
+
+        function addProzBlocks() {
+                let main = document.querySelector('main');
+
+                main.innerHTML = '';
+
+                let numberOfBlocks = 10;
+                for (let i = 1; i <= numberOfBlocks; i++) {
+
+                    let newBlock = document.createElement('div');
+                    newBlock.style.width = '200px';
+                    newBlock.style.height = '60px';
+                    newBlock.style.backgroundColor = 'salmon';
+                    newBlock.style.margin = '8px';
+                    newBlock.style.border = '3px solid darkred';
+                    newBlock.style.textAlign = 'center';
+                    newBlock.style.lineHeight = '60px';
+
+                    newBlock.style.opacity = i / numberOfBlocks;
+
+                    newBlock.innerHTML = `Блок №${i}`;
+
+                    main.appendChild(newBlock);
+                }
+        }
+
     </script>
 </head>
 <body>
@@ -85,6 +111,7 @@
         <button onclick="addNewBlocks()">Добавить блоки</button>
         <button onclick="add20_50()">20 => 50</button>
         <button onclick="add10_min80()">10 => -80</button>
+        <button onclick="addProzBlocks()">Добавить полупрозрачные блоки</button>
     </main>
 
     <footer>
