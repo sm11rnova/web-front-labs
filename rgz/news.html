@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости</title>
+    <link rel="stylesheet" href="../rgz/style.css">
+    <link rel="icon" href="../rgz/faviconrgz-32x32.png">
+    <link rel="icon" href="../rgz/faviconrgz-16x16.png">
+    <style>
+        nav ul li a {
+            color: black;
+        }
+        .text {
+            width: 320px;
+            border: 3px solid rgb(6, 37, 78);
+            border-width: 3px;
+            color: rgb(8, 36, 87);
+            background-color: rgb(255, 255, 255);
+            display: inline-block;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            vertical-align: top;
+            padding: 20px;
+            text-align: left;
+            margin: 5px;
+            margin-left: 200px;
+            border-radius: 10px;
+        }
+        .text:hover {
+            color: rgb(12, 87, 185);
+            transition: 0.5s;
+            box-shadow: 0 0 15px rgb(2, 25, 66);
+        }
+        #news-list {
+            text-align: left;
+            list-style-type: none;
+            padding: 0;
+        }
+        h2 {
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h1 {
+            font-size: 25px;
+        }
+        button {
+            background-color: rgb(8, 36, 87);
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        body {
+            background-image: url('fon.jpeg'); 
+            background-size: contain; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+        }
+    </style>
+    <script>
+        function toggleNews(newsId) {
+            const newsList = document.getElementById(newsId);
+            const showButton = document.getElementById('show-' + newsId);
+            const hideButton = document.getElementById('hide-' + newsId);
+
+            if (newsList.style.display === 'none') {
+                newsList.style.display = 'block';
+                showButton.style.display = 'none';
+                hideButton.style.display = 'inline';
+            } else {
+                newsList.style.display = 'none';
+                showButton.style.display = 'inline';
+                hideButton.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="main.html"><img src="Logo BIOCAD.png" alt="Логотип БИОКАД" class="logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="aboutco.html">О компании</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="currency.html">Курс валют</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                    <li><a href="video.html">Видео</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h1 style="text-align: center; font-size: 45px; color: rgb(8, 36, 87); font-family: Verdana, Geneva, Tahoma, sans-serif;">Новости компании</h1>
+        <div class="text">
+            <h1>BIOCAD завершила приём заявок на грантовый конкурс «Наука добра»</h1>
+            <h2>Опубликовано: 14.05.2024</h2>
+            <button id="shownew1" onclick="toggleNews('new1')">больше</button>
+            <button id="hidenew1" onclick="toggleNews('new1')" style="display:none;">скрыть</button>
+            <div id="new1" style="display: none; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                Биотехнологическая компания BIOCAD завершила прием заявок третьего сезона Всероссийского грантового конкурса «Наука добра». Регистрацию для участия в конкурсе прошли более 60 некоммерческих организаций со всей России. Имена победителей планируют объявить в июне. 
+            </div>
+        </div>
+        <div class="text">
+            <h1>В России зарегистрировали первый в мире препарат, способный остановить развитие болезни Бехтерева</h1>
+            <h2>Опубликовано: 01.05.2024</h2>
+            <button id="shownew2" onclick="toggleNews('new2')">больше</button>
+            <button id="hidenew2" onclick="toggleNews('new2')" style="display:none;">скрыть</button>
+            <div id="new2" style="display: none;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                Министерство здравоохранения Российской Федерации зарегистрировало первый в классе оригинальный препарат для терапии пациентов с рентгенологическим аксиальным спондилоартритом (болезнь Бехтерева), разработанный биотехнологической компанией BIOCAD совместно с учеными РНИМУ им. Н. И. Пирогова. Механизм действия инновационной разработки уникален и не имеет аналогов в мире. 
+            </div>
+        </div>
+        <div class="text">
+            <h1>Два оригинальных препарата BIOCAD для терапии рассеянного склероза включены в перечни ЖНВЛП и ВЗН</h1>
+            <h2>Опубликовано: 22.04.2024</h2>
+            <button id="shownew3" onclick="toggleNews('new3')">больше</button>
+            <button id="hidenew3" onclick="toggleNews('new3')" style="display:none;">скрыть</button>
+            <div id="new3" style="display: none;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                Правительство Российской Федерации расширило перечни «Жизненно необходимых и важнейших лекарственных препаратов» (ЖНВЛП), и лекарственных препаратов, применяемых при лечении «Высокозатратных нозологий». В них включены первые российские оригинальные препараты для терапии рассеянного склероза Ивлизи® и Тенексиа®, разработанные биотехнологической компанией BIOCAD. Соответствующее распоряжение подписал председатель Правительства Российской Федерации Михаил Мишустин.
+            </div>
+        </div>
+        <div class="text">
+            <h1>Врачи Школы практической онкологии им. Андрея Павленко посетили производственный комплекс BIOCAD</h1>
+            <h2>Опубликовано: 22.04.2024</h2>
+            <button id="shownew4" onclick="toggleNews('new4')">больше</button>
+            <button id="hidenew4" onclick="toggleNews('new4')" style="display:none;">скрыть</button>
+            <div id="new4" style="display: none;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                3 апреля научно-производственный комплекс биотехнологической компании BIOCAD в Стрельне посетили резиденты и наставники Школы практической онкологии им. Андрея Павленко. Участники встречи узнали о ключевых этапах разработки инновационных лекарственных препаратов для терапии онкологических заболеваний. 
+            </div>
+        </div>
+        <div class="text">
+            <h1>ВОЗ присвоила оригинальному препарату BCD-180 международное непатентованное наименование сенипрутуг</h1>
+            <h2>Опубликовано: 03.04.2024</h2>
+            <button id="shownew5" onclick="toggleNews('new5')">больше</button>
+            <button id="hidenew5" onclick="toggleNews('new5')" style="display:none;">скрыть</button>
+            <div id="new5" style="display: none;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                Всемирная организация здравоохранения присвоила оригинальному препарату BCD-180, предназначенному для терапии рентгенологического аксиального спондилоартрита (р-аксСпА, болезнь Бехтерева), международное непатентованное наименование (МНН) сенипрутуг (seniprutug).  
+            </div>
+        </div>
+        <div class="text">
+            <h1>BIOCAD приступает к клиническому исследованию инновационного препарата для терапии болезни Крона и язвенного колита</h1>
+            <h2>Опубликовано: 29.03.2024</h2>
+            <button id="shownew6" onclick="toggleNews('new6')">больше</button>
+            <button id="hidenew6" onclick="toggleNews('new6')" style="display:none;">скрыть</button>
+            <div id="new6" style="display: none;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                Биотехнологическая компания BIOCAD получила разрешение Минздрава России на проведение клинического исследования нового оригинального препарата BCD-261, предназначенного для терапии воспалительных заболеваний кишечника — болезни Крона и язвенного колита среднетяжелого и тяжелого течения. Участие в исследовании I фазы смогут принять здоровые мужчины в возрасте от 18 до 45 лет включительно.
+            </div>
+        </div>
+        <div class="text">
+            <h1>BIOCAD обнародовал результаты клинического исследования инновационного препарата для терапии болезни Бехтерева</h1>
+            <h2>Опубликовано: 18.03.2024</h2>
+            <button id="shownew7" onclick="toggleNews('new7')">больше</button>
+            <button id="hidenew7" onclick="toggleNews('new7')" style="display:none;">скрыть</button>
+            <div id="new7" style="display: none;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                Биотехнологическая компания BIOCAD представила результаты клинического исследования II фазы ELEFTA, в рамках которого оценена эффективность и безопасность первого в классе препарата BCD-180 (МНН сенипрутуг) для терапии рентгенологического аксиального спондилоартрита (болезнь Бехтерева). Статья с результатами исследования опубликована в ведущем российском научном журнале «Научно-практическая ревматология». 
+            </div>
+        </div>
+        <div class="text">
+            <h1>BIOCAD объявила о старте третьего сезона Всероссийского грантового конкурса «Наука добра»</h1>
+            <h2>Опубликовано: 18.03.2024</h2>
+            <button id="shownew8" onclick="toggleNews('new8')">больше</button>
+            <button id="hidenew8" onclick="toggleNews('new8')" style="display:none;">скрыть</button>
+            <div id="new8" style="display: none;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                Биотехнологическая компания BIOCAD запускает третий сезон грантового конкурса «Наука добра». Участие в нем могут принять некоммерческие организации, чьи социальные проекты направлены на повышение качества жизни пациентов, профилактику и раннюю диагностику онкологических, аутоиммунных и редких генетических заболеваний. Грантовый фонд конкурса — пять миллионов рублей. 
+            </div>
+        </div>
+        <div class="text">
+            <h1>BIOCAD стал лидером рейтинга влиятельности издания «Фармацевтический вестник»</h1>
+            <h2>Опубликовано: 06.03.2024</h2>
+            <button id="shownew9" onclick="toggleNews('new9')">больше</button>
+            <button id="hidenew9" onclick="toggleNews('new9')" style="display:none;">скрыть</button>
+            <div id="new9" style="display: none;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                BIOCAD признан победителем в номинации «Фармацевтическая компания, оказавшая наибольшее влияние на развитие фармацевтического рынка в 2023 году».
+            </div>
+        </div>
+        <div class="text">
+            <h1>«Ростелеком» и BIOCAD создадут импортонезависимые ПАК для фармотрасли</h1>
+            <h2>Опубликовано: 20.02.2024</h2>
+            <button id="shownew10" onclick="toggleNews('new10')">больше</button>
+            <button id="hidenew10" onclick="toggleNews('new10')" style="display:none;">скрыть</button>
+            <div id="new10" style="display: none;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                «Ростелеком» и биотехнологическая компания BIOCAD подписали соглашение о сотрудничестве, в рамках которого будут созданы удаленные рабочие места нового поколения для фармацевтов, биотехнологов, лаборантов и других сотрудников фармотрасли. Компании объединят экспертизу для создания инновационных решений и программно-аппаратных комплексов (ПАК), полностью основанных на российском оборудовании и операционных системах. Первым проектом сотрудничества станет формирование доверенной экосистемы мобильных и стационарных рабочих пространств для безопасных коммуникаций и совместной работы с документами в виртуальной среде.
+            </div>
+        </div>
+    </main>
+    <footer style="color: rgb(8, 36, 87); font-family: Verdana, Geneva, Tahoma, sans-serif;">
+        <a><img src="Logo BIOCAD.png" alt="Логотип БИОКАД" class="logo1"></a><br>
+        &copy; 2001-2024
+    </footer>    
+</body>
+</html>
