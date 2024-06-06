@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смирнова Виктория Александровна. Лабораторная 8</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-48x48.ico">
+    <script src="time.js"></script>
+    <style>
+        #time {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 20px;
+            color: #d3d3df;
+            font-family: 'Arial', sans-serif;
+        }
+        #seconds {
+            font-size: 100px;
+            color: darkred;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #clock-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        }
+        #clock {
+            width: 200px;
+            height: 200px;
+            border: 5px solid #333;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #second-hand {
+            width: 2px;
+            height: 90px;
+            background: darkred;
+            position: absolute;
+            bottom: 50%;
+            transform-origin: bottom;
+            transform: rotate(0deg);
+            transition: transform 1s linear;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+        <div id="time">00:00:00</div>
+    </header>
+    
+    <main>
+        <div id="seconds">00</div>
+            <div id="clock-container">
+                <div id="clock">
+                    <div id="second-hand"></div>
+                </div>
+    </main>
+
+    <footer>
+        &copy; Виктория Смирнова, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
