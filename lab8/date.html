@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Смирнова Виктория Александровна. Лабораторная 8</title>
+    <title>Вывод даты</title>
     <link rel="stylesheet" href="../main.css">
     <link rel="icon" href="../favicon-32x32.png">
     <link rel="icon" href="../favicon-48x48.ico">
+    <script src="lab8.js"></script>
 </head>
-<body>
+<body onload="showDate()">
     <header>
         НГТУ, ФБ, Лабораторная работа 8
     </header>
     
     <main>
-        <a href="date.html">Добавление блоков</a><br>
+        <div id="current-date"></div>
+        <div id="locale-dates"></div><br>
+        <div id="additional-info"></div>    
     </main>
-
+    
     <footer>
         &copy; Виктория Смирнова, ФБИ-21, 2 курс, 2024
     </footer>
